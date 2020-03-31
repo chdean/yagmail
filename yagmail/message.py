@@ -82,7 +82,7 @@ def prepare_message(user, useralias, addresses, subject, contents, attachments, 
                 if content_object["encoding"] == "base64":
                     email.encoders.encode_base64(content_object["mime_object"])
                     msg.attach(content_object["mime_object"])
-                elif content_object["sub_type"] not in ["html", "plain"]:
+                elif content_object["sub_type"] not in ["plain"]:
                     msg.attach(content_object["mime_object"])
                 else:
                     if newline_to_break:
